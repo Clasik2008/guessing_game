@@ -1,23 +1,32 @@
 <script type="text/javascript">
-	var guess, answer, message, welcome;
-
-	welcome = alert("Welcome unlucky contenstant to the odds are not in your favor game!");
-
-  guess = prompt("Choose a door 1, 2 or 3, but pick carefully or you will be eaten and tworn apart by vampires");
-
-  answer = 2;
-
-	if (guess == answer) {
-		message = prompt("Congrats you have made it to the second stage of the game where again the odds are not in your favor! In this next phase you must decide which bus route will save you from the zombie invasion in Words city, there is route 40, 41, 44, 103" + "hint: pay extra attention to the words or pay with your life");
-  answer = 44;
-
-	} else {
-		message = ("hint: its not door 1)");
-
-	}
-  if (message == answer) {
-    "You have survived for now!!"
+  function Game() {
+    this.question1 = function() {
+      var answer = 2;
+      var guess = prompt("Choose a door 1, 2 or 3, but pick carefully or you will be eaten and torn apart by vampires");
+      if (guess == answer) {
+        return;
+      } else {
+        alert("Try again.")
+        this.question1();
+      }
+    };
+    this.question2 = function() {
+      var answer = 44;
+      var guess = prompt("Congrats you have made it to the second stage of the game where again the odds are not in your favor! In this next phase you must decide which bus route will save you from the zombie invasion in Words city, there is route 40, 41, 44. " + "hint: pay extra attention to the words or pay with your life");
+      if (guess == answer) {
+        return;
+      } else {
+        alert("Try again.")
+        this.question2();
+      }
+    };
   }
 
-alert(message);
+  var game = new Game();
+
+  alert("Welcome unlucky contenstant to the odds are not in your favor game!");
+  game.question1();
+  game.question2();
+  alert("You have survived for now.");
+
 </script>
