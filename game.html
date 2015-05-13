@@ -1,17 +1,23 @@
 <script type="text/javascript">
-	var guess, answer, me
-	guess = prompt("Welcome unlucky contenstant to the odds are not in your favor game! Choose a door 1, 2 or 3, but pick carefully or you will be eaten and tworn apart by vampires");
-	answer = 2;
+	var guess, answer, message, welcome;
+
+	welcome = alert("Welcome unlucky contenstant to the odds are not in your favor game!");
+
+  guess = prompt("Choose a door 1, 2 or 3, but pick carefully or you will be eaten and tworn apart by vampires");
+
+  answer = 2;
 
 	if (guess == answer) {
-		message = ("Congrats you have made it to the second stage of the game where again the odds are not in your favor! In this next phase you must decide which bus route will save you from the zombie invasion in Words city, there is route 40, 41, 44, 103")
-
-	prompt(message);
+		message = prompt("Congrats you have made it to the second stage of the game where again the odds are not in your favor! In this next phase you must decide which bus route will save you from the zombie invasion in Words city, there is route 40, 41, 44, 103" + "hint: pay extra attention to the words or pay with your life");
+  answer = 44;
 
 	} else {
-		message = ("(hint its not door 1)");
+		message = ("hint: its not door 1)");
 
 	}
+  if (message == answer) {
+    "You have survived for now!!"
+  }
 
 alert(message);
 </script>
